@@ -1,0 +1,48 @@
+.Home {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ================= */
+/* == HeroSection == */
+/* ================= */
+.Hero {
+    background-image: url('../../assets/img/LOL.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+}
+
+.HeroPic {
+    width: 100%;
+
+}
+
+.HeroTitle {
+    padding-top: 10rem;
+    font-size: 3rem;
+    line-height: 57.6px;
+    width: 388px;
+    -webkit-text-stroke: 0.001px rgba(0, 0, 0, 0.211);
+    text-shadow: white .1px .1px;
+}
+
+/* ======================= */
+/* = RecentlyAddsSection = */
+/* ======================= */
+.homeFlexContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: fit-content;
+    gap: 3rem;
+}
+
+.homeFlexContainer:hover> :not(:hover) {
+    opacity: 0.4;
+}
+
+section h2 {
+    margin-left: 2rem;
+}

@@ -1,0 +1,72 @@
+.sideMenu {
+    position: fixed;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px 0;
+    top: 0vh;
+    left: 0;
+    height: 100vh;
+    border-right: 2px solid white;
+    background-color: black;
+
+}
+
+.sideMenuB {
+    background-color: black;
+
+    position: fixed;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px 0;
+    top: 0vh;
+    left: 0;
+    height: 100vh;
+    border-right: 2px solid white;
+
+}
+
+.Hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar-text {
+    display: none;
+}
+
+.abc {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .5rem;
+}
+#TtT{
+    position: absolute;
+    top:0rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(240, 248, 255, 0.32);
+}
+.s-i{
+    top:0;
+    background-image: url("../../assets/img/Burger.png");
+    width: 3rem;
+ 
+}
+.s-i2{
+    position: absolute;
+    top:0;
+    right: 1px;
+    background-image: url("../../assets/img/Vector.png");
+    width: 3rem;
+}

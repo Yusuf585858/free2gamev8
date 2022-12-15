@@ -1,0 +1,68 @@
+.gameCards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 15rem;
+    min-height: 28rem;
+    height: fit-content;
+    text-align: center;
+    padding: .2rem;
+    border: solid 1px;
+    border-radius: .8rem;
+    background-color: #102130;
+    transition: .3s;
+}
+
+.MainContainer {
+    height: 100vh;
+    margin-left: 50px;
+
+}
+
+.read {
+    background-color: red;
+    color: aliceblue;
+    font-size: 15pt;
+    border-radius: 1rem;
+    padding: .3rem .5rem;
+
+    cursor: pointer;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 5rem;
+    justify-content: center;
+    height: 100vh;
+}
+
+.bild {
+    width: 15rem;
+    height: 10rem;
+    border-radius: .7rem;
+}
+
+.fContainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: rgba(240, 248, 255, 0.23);
+    margin: 2rem;
+}
+
+
+button {
+    border: none;
+}
+
+.description {
+    font-size: .8rem;
+}
+
+a {
+    color: white;
+}

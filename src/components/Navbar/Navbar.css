@@ -1,0 +1,38 @@
+.navbarFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    height: fit-content;
+}
+
+.input {
+    border: none;
+    background-color: #375470;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 5%;
+    width: 273px;
+    height: 35px;
+    position: fixed;
+    right: 0;
+    top: 1rem;
+    z-index: 1;
+}
+
+.NavbarTitle {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.logo {
+    margin-left: 3rem;
+}
