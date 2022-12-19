@@ -7,7 +7,6 @@ function RecentlyAdded() {
 
     useEffect(() => {
 
-
         fetch(api)
             .then((response) => {
                 return response.json();
@@ -27,7 +26,7 @@ function RecentlyAdded() {
             <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'right' }}  ></input>
             <section className='Radd'>
                 <div className='bg2'>
-Recently Added
+                    Recently Added
                 </div>
                 {added.filter((item) => {
                     return search.toLowerCase() === '' ? item : item.title.toLowerCase().includes(search);

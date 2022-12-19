@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 
 import GameCard from "../../components/GameCard/GameCard.js";
 
-let GEAR = ["mmorpg", "shooter", "strategy", "moba", "racing", "sports", "social", "sandbox", "open-world", "survival", "pvp", "pve", "pixel", "voxel", "zombie", "turn-based", "first-person", "third-Person", 'top-down', "tank", "space", "sailing", "side-scroller", "superhero", "permadeath", "card", "battle-royale", "mmo", "mmofps", "mmotps", "3d", "2d", "anime", "fantasy", "sci-fi", "fighting", "action-rpg", "action", "military", "martial-arts", "flight", "low-spec", "tower-defense", "horror", "mmorts"];
+let GEAR = ["&category=mmorpg", "&category=shooter", "&category=strategy", "&category=moba", "&category=racing", "&category=sports", "&category=social", "&category=sandbox", "&category=open-world", "&category=survival", "&category=pvp", "&category=pve", "&category=pixel", "&category=voxel", "&category=zombie", "&category=turn-based", "&category=first-person", "&category=third-Person", '&category=top-down', "&category=tank", "&category=space", "&category=sailing", "&category=side-scroller", "&category=superhero", "&category=permadeath", "&category=card", "&category=battle-royale", "&category=mmo", "&category=mmofps", "&category=mmotps", "&category=3d", "&category=2d", "&category=anime", "&category=fantasy", "&category=sci-fi", "&category=fighting", "&category=action-rpg", "&category=action", "&category=military", "&category=martial-arts", "&category=flight", "&category=low-spec", "&category=tower-defense", "&category=horror", "&category=mmorts"];
 let PLT = ["all", "pc", "browser"];
 let Sby = ["alphabetical", "release-date", "popular"];
 
 function AllGames() {
     const [plm, setP] = useState("all");
-    const [category, setC] = useState("shooter");
+    const [category, setC] = useState("");
     const [sort, setSort] = useState("alphabetical");
     const [add, setAd] = useState();
     const [activeButtonA, setActiveButtonA] = useState(0);
     const [activeButtonB, setActiveButtonB] = useState(0);
-    const [activeButtonC, setActiveButtonC] = useState(1);
+    const [activeButtonC, setActiveButtonC] = useState();
     useEffect(() => {
 
-        fetch(`https://www.freetogame.com/api/games?platform=${plm}&category=${category}&sort-by=${sort}`)
+        fetch(`https://www.freetogame.com/api/games?platform=${plm}${category}&sort-by=${sort}`)
             .then((response) => {
                 return response.json();
             })
@@ -83,7 +83,7 @@ function AllGames() {
                                             backgroundColor: activeButtonC === indexB ? "violet" : ""
                                         }}
                                     >
-                                        {c.toUpperCase()}
+                                        {c.toUpperCase().slice(10)}
                                     </button>
                                 );
                             })}

@@ -3,15 +3,17 @@ import { useParams } from 'react-router-dom';
 
 export default function DetailView() {
 
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'cd875962fdmshe80be2c26b532c8p177c65jsn880cf737256a',
+            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+        }
+    };
     const { id } = useParams();
-    // eslint-disable-next-line
-    const [api, setApi] = useState(`https://www.freetogame.com/api/game?id=${id}`);
     const [detail, setDetail] = useState();
-
-
-
     useEffect(() => {
-        fetch(api)
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`, options)
             .then((response) => {
                 return response.json();
             })
@@ -20,7 +22,7 @@ export default function DetailView() {
                 console.log(DetailRes);
             });
 
-    }, [api]);
+    }, []);
 
 
 
@@ -35,7 +37,7 @@ export default function DetailView() {
                     <img alt='.' className='tBild' src={detail?.thumbnail}></img>
                     <p>Platfrom: {detail?.platform}</p>
                     <p>{detail?.genre}</p>
-                    <a  href={detail?.game_url}><button className='play'>Play Now</button></a>
+                    <a href={detail?.game_url}><button className='play'>Play Now</button></a>
                 </div>
                 <div className='scD'>
                     <h1>About</h1>
