@@ -15,14 +15,19 @@ function AllGames() {
     const [activeButtonB, setActiveButtonB] = useState(0);
     const [activeButtonC, setActiveButtonC] = useState();
     useEffect(() => {
+        console.log(process.env.REACT_APP_KEY);
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.REACT_APP_KEY,
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        };
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?platform=${plm}${category}&sort-by=${sort}`, options)
+            .then(response => response.json())
+            .then(sortAdded => setAd(sortAdded))
+            .catch(err => console.error(err));
 
-        fetch(`https://www.freetogame.com/api/games?platform=${plm}${category}&sort-by=${sort}`)
-            .then((response) => {
-                return response.json();
-            })
-            .then((sortAdded) => {
-                setAd(sortAdded);
-            });
     }, [sort, plm, category]);
     const [search, setSearch] = useState('');
     if (add === undefined) {
@@ -30,7 +35,7 @@ function AllGames() {
     }
     return (
         <main>
-            <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'right' }}  ></input>
+            <input onChange={(e) => setSearch(e.target.value)} className='input' placeholder='🔎' style={{ textAlign: 'left' }}  ></input>
             <span className="mainContainer">
                 <div className="bg">
                     All Games
@@ -105,3 +110,8 @@ function AllGames() {
 }
 
 export default AllGames;
+
+
+
+
+

@@ -21,7 +21,7 @@ export default function GameCard(props) {
             </div>
 
             <div className="gameCardFlex">
-                <img src={logoPlatform} alt="FixiHartmann" ></img>
+                <img src={logoPlatform} alt="logo" ></img>
 
                 <h3>{props.genre}</h3>
             </div>

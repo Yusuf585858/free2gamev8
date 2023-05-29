@@ -2,8 +2,24 @@ import React, { useState, useEffect } from 'react';
 import GameCard from '../../components/GameCard/GameCard';
 function RecentlyAdded() {
     const [added, setAdded] = useState([]);
-    // eslint-disable-next-line
-    const [api, setApi] = useState('https://www.freetogame.com/api/games?sort-by=release-date');
+    useEffect(() => {
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.REACT_APP_KEY,
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        };
+        fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=release-date', options)
+            .then(response => response.json())
+            .then(response => setAdded(response))
+            .catch(err => console.error(err));
+
+    })
+
+        ;
+    /* const [api, setApi] = useState('https://www.freetogame.com/api/games?sort-by=release-date');
 
     useEffect(() => {
 
@@ -15,8 +31,8 @@ function RecentlyAdded() {
                 setAdded(sortAdded);
                 console.log(sortAdded);
             });
-        // eslint-disable-next-line
-    }, []);
+
+    }, []); */
 
     const [search, setSearch] = useState('');
 

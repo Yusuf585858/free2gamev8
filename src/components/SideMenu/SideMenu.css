@@ -10,12 +10,13 @@
     height: 100vh;
     border-right: 2px solid white;
     background-color: black;
+    transition: 1s;
 
 }
 
 .sideMenuB {
     background-color: black;
-
+    transition: 1s;
     position: fixed;
     width: 200px;
     display: flex;
@@ -35,10 +36,13 @@
     left: 0;
     width: 50px;
     height: 50px;
+    transition: 1s;
 }
 
 .sidebar-text {
     display: none;
+    transition: 1s;
+
 }
 
 .abc {
@@ -47,26 +51,41 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: .5rem;
+    transition: 1s;
+    transition-delay: 1s;
+
 }
-#TtT{
+
+.abc h3 {
+    transition: 3s;
+    transition-delay: 3s;
+    opacity: 80%;
+}
+
+#TtT {
     position: absolute;
-    top:0rem;
+    top: 0rem;
+    transition: 1s;
     background-position: center;
     background-repeat: no-repeat;
     width: 3rem;
     height: 3rem;
     background-color: rgba(240, 248, 255, 0.32);
 }
-.s-i{
-    top:0;
+
+.s-i {
+    top: 0;
     background-image: url("../../assets/img/Burger.png");
     width: 3rem;
- 
+    transition: 1s;
+
 }
-.s-i2{
+
+.s-i2 {
     position: absolute;
-    top:0;
+    top: 0;
     right: 1px;
     background-image: url("../../assets/img/Vector.png");
     width: 3rem;
+    transition: 1s;
 }

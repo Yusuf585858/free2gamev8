@@ -8,33 +8,55 @@ export default function Home() {
     const [topBrowser, setTopBrowserArray] = useState([]);
     //=====================First======================================
     useEffect(() => {
-        fetch('https://www.freetogame.com/api/games?sort-by=release-date')
-            .then((response) => (response.json()))
-            .then((recentGames) => {
-                setRecentGamesArray(recentGames);
-            });
-    }, []);
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.REACT_APP_KEY,
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        };
+        fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=release-date', options)
+            .then(response => response.json())
+            .then(recentGames => setRecentGamesArray(recentGames))
+            .catch(err => console.error(err));
+
+    });
     const recentlyAddedGames = recentGames.slice(0, 4);
     //======================Second£===================================
 
     useEffect(() => {
-        fetch('https://www.freetogame.com/api/games?platform=pc&sort-by=popularity')
-            .then((response) => (response.json()))
-            .then((topPcGames) => {
-                setTopPcArray(topPcGames);
-                console.log(topPcGames);
-            });
 
-    }, []);
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.REACT_APP_KEY,
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        };
+        fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=popularity', options)
+            .then(response => response.json())
+            .then(topPcGames => setTopPcArray(topPcGames))
+            .catch(err => console.error(err));
+
+    });
     const Top4PcGames = topPc.slice(0, 4);
     //================================================================
     useEffect(() => {
-        fetch('https://www.freetogame.com/api/games?platform=browser&sort-by=popularity')
-            .then((response) => (response.json()))
-            .then((topBrowserGames) => {
-                setTopBrowserArray(topBrowserGames);
-            });
-    }, []);
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': process.env.REACT_APP_KEY,
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        };
+        fetch('https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&sort-by=popularity', options)
+            .then(response => response.json())
+            .then(topBrowserGames => setTopBrowserArray(topBrowserGames))
+            .catch(err => console.error(err));
+
+    });
     const Top4BrowserGames = topBrowser.slice(0, 4);
     //================================================================
     return (
